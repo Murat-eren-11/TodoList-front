@@ -4,7 +4,11 @@ const Task = (props) => {
   return (
     <div className="task-container">
       {props.tasks &&
-        props.tasks.map((task, index) => <p key={index}>{task}</p>)}
+        props.tasks.map((task, index) => (
+          <p className="tasks" key={index}>
+            {task}
+          </p>
+        ))}
     </div>
   );
 };

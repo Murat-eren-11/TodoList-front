@@ -6,6 +6,7 @@ const TaskAdd = (props) => {
 
   return (
     <form
+      className="newtaskform"
       onSubmit={(e) => {
         e.preventDefault();
         props.onAdd(newTask);

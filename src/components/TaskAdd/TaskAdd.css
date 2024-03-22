@@ -1,0 +1,21 @@
+.newtaskform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newtask {
+  margin-right: 40px;
+  width: 548px;
+  height: 65px;
+  font-size: 24px;
+}
+
+.addtask {
+  width: 130px;
+  height: 65px;
+  border-radius: 10px;
+  background-color: #5c48d3;
+  color: white;
+  font-size: 22px;
+}

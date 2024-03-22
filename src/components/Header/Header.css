@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 200px;
+  font-size: 50px;
+  padding-left: 50px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.iconlist {
+  color: blue;
+  font-weight: bold;
+  margin-right: 30px;
+}

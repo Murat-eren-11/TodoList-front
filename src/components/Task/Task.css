@@ -7,6 +7,10 @@
   margin-bottom: 50px;
   overflow-y: auto;
 }
+.tasks {
+  display: flex;
+  flex-direction: row;
+}
 
 .task {
   display: flex;
@@ -18,4 +22,11 @@
   width: 475px;
   height: 34px;
   background-color: rgba(163, 129, 147, 0.1);
+  margin-right: 20px;
+}
+.trash {
+  font-size: 22px;
+  position: relative;
+  top: 5px;
+  cursor: pointer;
 }

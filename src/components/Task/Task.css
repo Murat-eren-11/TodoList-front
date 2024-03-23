@@ -1,5 +1,5 @@
 .task-container {
-  height: 30vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -21,7 +21,6 @@
   margin-bottom: 10px;
   width: 475px;
   height: 34px;
-  background-color: rgba(163, 129, 147, 0.1);
   margin-right: 20px;
 }
 .trash {
@@ -29,4 +28,13 @@
   position: relative;
   top: 5px;
   cursor: pointer;
+}
+.checked {
+  text-decoration: line-through;
+}
+.check {
+  height: 34px;
+  width: 20px;
+  position: relative;
+  bottom: 4px;
 }

@@ -16,19 +16,56 @@ import "./App.css";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
+  const filteredTasks = tasks.filter((task) =>
+    task.text.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleCheckboxChange = (taskText) => {
+    const updatedTasks = props.tasks.map((task) => {
+      if (task.text === taskText) {
+        return {
+          ...task,
+          checked: !task.checked,
+        };
+      }
+      return task;
+    });
+
+    props.onDelete(updatedTasks);
+  };
+
+  const handleDeleteTask = (taskText) => {
+    const newTasks = props.tasks.filter((task) => task.text !== taskText);
+    props.onDelete(newTasks);
+  };
   return (
     <>
       <Header />
       <TaskAdd
-        onAdd={(newTask) => {
-          setTasks((prevTasks) => [...prevTasks, newTask]);
+        onAdd={(newTaskText) => {
+          setTasks((prevTasks) => [
+            ...prevTasks,
+            { text: newTaskText, checked: false },
+          ]);
         }}
+        onSearch={handleSearch}
       />
       <Task
-        tasks={tasks}
+        tasks={filteredTasks}
         onDelete={(newTasks) => {
           setTasks(newTasks);
+        }}
+        onCheckboxChange={(taskText) => {
+          handleCheckboxChange(taskText);
+        }}
+        onDeleteTask={(taskText) => {
+          handleDeleteTask(taskText);
         }}
       />
       <Footer />

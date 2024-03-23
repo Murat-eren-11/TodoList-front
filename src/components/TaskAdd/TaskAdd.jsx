@@ -4,6 +4,11 @@ import "./TaskAdd.css";
 const TaskAdd = (props) => {
   const [newTask, setNewTask] = useState("");
 
+  const handleInputChange = (e) => {
+    const { value } = e.target;
+    setNewTask(value);
+    props.onSearch(value);
+  };
   return (
     <form
       className="newtaskform"
@@ -20,7 +25,7 @@ const TaskAdd = (props) => {
         type="text"
         value={newTask}
         placeholder="new task"
-        onChange={(e) => setNewTask(e.target.value)}
+        onChange={handleInputChange}
       />
       <input className="addtask" type="submit" value="Add task" />
     </form>

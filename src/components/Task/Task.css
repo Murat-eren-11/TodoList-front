@@ -2,15 +2,20 @@
   height: 30vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 50px;
+  overflow-y: auto;
 }
 
-.tasks {
+.task {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 28px;
+  margin-bottom: 10px;
+  width: 475px;
+  height: 34px;
+  background-color: rgba(163, 129, 147, 0.1);
 }

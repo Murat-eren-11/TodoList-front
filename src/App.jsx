@@ -16,12 +16,12 @@ const App = () => {
   return (
     <>
       <Header />
-      <Task tasks={tasks} />
       <TaskAdd
         onAdd={(newTask) => {
           setTasks((prevTasks) => [...prevTasks, newTask]);
         }}
       />
+      <Task tasks={tasks} />
       <Footer />
     </>
   );

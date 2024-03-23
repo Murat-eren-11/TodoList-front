@@ -9,8 +9,10 @@ const TaskAdd = (props) => {
       className="newtaskform"
       onSubmit={(e) => {
         e.preventDefault();
-        props.onAdd(newTask);
-        setNewTask("");
+        if (newTask.trim() !== "") {
+          props.onAdd(newTask);
+          setNewTask("");
+        }
       }}
     >
       <input

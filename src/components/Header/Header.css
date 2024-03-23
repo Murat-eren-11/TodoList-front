@@ -1,15 +1,66 @@
 header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   height: 100px;
   font-size: 50px;
   padding-left: 50px;
   border-bottom: 1px solid lightgrey;
 }
-
+.colgauche {
+  display: flex;
+}
 .iconlist {
   color: blue;
   font-weight: bold;
   margin-right: 30px;
+}
+.coldroite {
+  display: flex;
+}
+.switchbtn {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 30px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: #bada55;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 130px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
 }

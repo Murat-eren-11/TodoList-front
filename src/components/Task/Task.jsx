@@ -1,16 +1,14 @@
-import { useState } from "react";
 import "./Task.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Task = (props) => {
-  const [searchTerm, setSearchTerm] = useState("");
-
+  //je créé une variable pour mon filtrer le tableau quand je coche
   const sortedTasks = [...props.tasks].sort((a, b) => {
     if (!a.checked && b.checked) return -1;
     if (a.checked && !b.checked) return 1;
     return 0;
   });
-
+  //quand j'appelle la fonction, ça va update le tableau et faire descendre ma task
   const handleCheckboxChange = (taskText) => {
     const updatedTasks = props.tasks.map((task) => {
       if (task.text === taskText) {
@@ -24,7 +22,7 @@ const Task = (props) => {
 
     props.onDelete(updatedTasks);
   };
-
+  //fonction de suppression, rien de spécial à dire
   const handleDeleteTask = (taskText) => {
     const newTasks = props.tasks.filter((task) => task.text !== taskText);
     props.onDelete(newTasks);

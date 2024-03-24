@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./TaskAdd.css";
+import axios from "axios";
 
 const TaskAdd = (props) => {
   // je créé un state pour les nouvelles tâches
@@ -12,10 +13,22 @@ const TaskAdd = (props) => {
     setNewTask(value);
   };
   //Une fonction qui va enlevé en premier vérifié que ce n'est pas un mot vide puis qui va ajouté la nouvelle tâche
-  const handleAddTask = () => {
+  const handleAddTask = async () => {
     if (newTask.trim() !== "") {
-      props.onAdd(newTask);
-      setNewTask("");
+      try {
+        //on ajoute la réponse à Axios en mettant le site du back
+        const response = await axios.post(
+          "https://site--backend-todolist--cbrn9sjblrrw.code.run/",
+          {
+            tasks_name: newTask,
+          }
+        );
+        console.log(response.data);
+        props.onAdd(newTask);
+        setNewTask("");
+      } catch (error) {
+        console.error("pourquoi ça ajoute pas :", error);
+      }
     }
   };
   //J'utilise useEffet pour mettre à jour le terme de recherche avec ce que j'écris, je le filtre ensuite et je le déclenche uniquement quand j'entre un texte

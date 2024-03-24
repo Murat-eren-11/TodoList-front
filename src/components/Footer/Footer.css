@@ -10,7 +10,7 @@ footer > p > a {
   text-decoration: none;
   font-weight: 700;
 }
-footer {
+footer > p > a {
   color: black;
 }
 

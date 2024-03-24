@@ -7,11 +7,14 @@ const Task = (props) => {
   const [tasks, setTasks] = useState([]);
   //Je mets à jour avec les données récupérées
   useEffect(() => {
+    console.log("je suis dans le useEffect");
     const fetchTasks = async () => {
+      console.log("j'entre dans le fetchTasks");
       try {
         const response = await axios.get(
           "https://site--backend-todolist--cbrn9sjblrrw.code.run/"
         );
+        console.log(response.data);
         setTasks(response.data);
       } catch (error) {
         console.error("pourquoi j'ai pas :", error);

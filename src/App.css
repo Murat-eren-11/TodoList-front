@@ -28,6 +28,9 @@ body {
     font-size: 12px;
     text-wrap: wrap;
   }
+  .tasks {
+    width: 100%;
+  }
   .task {
     width: 100%;
     margin-right: 5px;

@@ -5,3 +5,30 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
+@media (max-width: 788px) {
+  header {
+    padding-left: 0px;
+    font-size: 28px;
+  }
+  .colgauche {
+    align-items: center;
+    margin-right: 20px;
+  }
+  .newtask {
+    width: 160px;
+    margin-right: 2px;
+  }
+  .addtask {
+    width: 50px;
+    font-size: 12px;
+    text-wrap: wrap;
+  }
+  .task {
+    width: 100%;
+    margin-right: 5px;
+    text-wrap: wrap;
+  }
+  .footer {
+    font-size: 12px;
+  }
+}

@@ -5,15 +5,18 @@ const Footer = () => {
     <footer>
       <p>
         Made with{" "}
-        <a href="" target="_blank">
+        <a href="https://fr.react.dev/" target="_blank">
           React
         </a>{" "}
         at{" "}
-        <a href="" target="_blank">
+        <a href="https://www.lereacteur.io/" target="_blank">
           Le Reacteur
         </a>{" "}
         by{" "}
-        <a href="" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/murat-eren-719127220/"
+          target="_blank"
+        >
           Murat
         </a>
       </p>

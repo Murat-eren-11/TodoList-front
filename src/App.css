@@ -30,11 +30,13 @@ body {
   }
   .tasks {
     width: 100%;
+    background-color: rgba(210, 209, 209, 0.2);
   }
   .task {
     width: 100%;
     margin-right: 5px;
     text-wrap: wrap;
+    margin-bottom: 10px;
   }
   .footer {
     font-size: 12px;

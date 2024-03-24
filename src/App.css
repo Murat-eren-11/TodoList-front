@@ -15,6 +15,9 @@ body {
     margin-right: 20px;
     padding-left: 20px;
   }
+  .coldroite {
+    padding-right: 20px;
+  }
   .newtask {
     width: 200px;
     margin-right: 5px;

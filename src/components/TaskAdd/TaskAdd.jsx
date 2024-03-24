@@ -14,11 +14,8 @@ const TaskAdd = (props) => {
   };
   //Une fonction qui va enlevé en premier vérifié que ce n'est pas un mot vide puis qui va ajouté la nouvelle tâche
   const handleAddTask = async () => {
-    console.log("je suis dans le handleaddtask");
     if (newTask.trim() !== "") {
-      console.log("je suis dans le if");
       try {
-        console.log("juste avant le post d'axios");
         //on ajoute la réponse à Axios en mettant le site du back
         const response = await axios.post(
           "https://site--backend-todolist--cbrn9sjblrrw.code.run/newtask",

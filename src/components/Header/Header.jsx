@@ -17,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex flex-row h-20 border-b-2 border-solid items-center justify-around max-lg:justify-between max-lg:p-4 bg-white dark:bg-black text-black dark:text-white">
+    <header className="flex flex-row h-20 border-b-4 border-solid items-center justify-around max-lg:justify-between max-lg:p-4 bg-white dark:bg-black text-black dark:text-white">
       <div className="flex flex-row">
         <FormatListBulletedIcon fontSize="large" className="pt-2" />
         <h1 className="text-4xl underline font-roboto ml-2">To Do List</h1>

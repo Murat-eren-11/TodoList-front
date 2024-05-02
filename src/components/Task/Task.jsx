@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const Task = (props) => {
   const [tasks, setTasks] = useState([]);
@@ -48,19 +49,27 @@ const Task = (props) => {
   };
 
   return (
-    <div className="task-container">
+    <div className="flex flex-row">
       {sortedTasks.map((task, index) => (
-        <div className="tasks" key={index}>
+        <div
+          className={`${
+            index % 2 === 0
+              ? "bg-gray-200 flex flex-row gap-4 dark:text-white"
+              : "flex flex-row gap-4 dark:text-white"
+          }`}
+          key={index}
+        >
           <input
             className="check"
             type="checkbox"
             checked={task.checked}
             onChange={() => handleCheckboxChange(task.text)}
           />
-          <p className={task.checked ? "task checked" : "task"}>{task.text}</p>
-          <FontAwesomeIcon
+          <p className={task.checked ? "line-through text-lg" : "text-lg"}>
+            {task.text}
+          </p>
+          <DeleteIcon
             className="trash"
-            icon="trash-can"
             onClick={() => handleDeleteTask(task.text)}
           />
         </div>

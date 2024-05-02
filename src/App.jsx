@@ -47,27 +47,29 @@ const App = () => {
   return (
     <>
       <Header />
-      <TaskAdd
-        onAdd={(newTaskText) => {
-          setTasks((prevTasks) => [
-            ...prevTasks,
-            { text: newTaskText, checked: false },
-          ]);
-        }}
-        onSearch={handleSearch}
-      />
-      <Task
-        tasks={filteredTasks}
-        onDelete={(newTasks) => {
-          setTasks(newTasks);
-        }}
-        onCheckboxChange={(taskText) => {
-          handleCheckboxChange(taskText);
-        }}
-        onDeleteTask={(taskText) => {
-          handleDeleteTask(taskText);
-        }}
-      />
+      <main className="flex flex-col items-center h-screen justify-around bg-white dark:bg-black text-black dark:text-white">
+        <TaskAdd
+          onAdd={(newTaskText) => {
+            setTasks((prevTasks) => [
+              ...prevTasks,
+              { text: newTaskText, checked: false },
+            ]);
+          }}
+          onSearch={handleSearch}
+        />
+        <Task
+          tasks={filteredTasks}
+          onDelete={(newTasks) => {
+            setTasks(newTasks);
+          }}
+          onCheckboxChange={(taskText) => {
+            handleCheckboxChange(taskText);
+          }}
+          onDeleteTask={(taskText) => {
+            handleDeleteTask(taskText);
+          }}
+        />
+      </main>
       <Footer />
     </>
   );

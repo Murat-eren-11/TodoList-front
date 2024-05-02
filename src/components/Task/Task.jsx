@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./Task.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 

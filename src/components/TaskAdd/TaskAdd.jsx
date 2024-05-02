@@ -1,17 +1,42 @@
 import { useState, useEffect } from "react";
-import "./TaskAdd.css";
 import axios from "axios";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const TaskAdd = (props) => {
   // je créé un state pour les nouvelles tâches
   const [newTask, setNewTask] = useState("");
   //un state pour la recherche
   const [searchTerm, setSearchTerm] = useState("");
+  //state pour la taille de la fenêtre
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   //une fonction qui prends en value ce que j'écris
   const handleInputChange = (e) => {
     const { value } = e.target;
     setNewTask(value);
   };
+
+  const darkTheme = createTheme({
+    palette: {
+      type: "dark",
+    },
+  });
+
+  //fonction pour suivre la taille de la fenêtre
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   //Une fonction qui va enlevé en premier vérifié que ce n'est pas un mot vide puis qui va ajouté la nouvelle tâche
   const handleAddTask = async () => {
     if (newTask.trim() !== "") {
@@ -41,20 +66,25 @@ const TaskAdd = (props) => {
   //et le dernier input sert à envoyé les données.
   return (
     <form
-      className="newtaskform"
+      className="flex flex-row"
       onSubmit={(e) => {
         e.preventDefault();
         handleAddTask();
       }}
     >
-      <input
-        className="newtask"
-        type="text"
-        value={newTask}
-        placeholder="new task"
-        onChange={handleInputChange}
-      />
-      <input className="addtask" type="submit" value="Add task" />
+      <ThemeProvider theme={darkTheme}>
+        <TextField
+          id="filled-basic"
+          label="Ajoutez une tâche"
+          variant="filled"
+          onChange={handleInputChange}
+          value={newTask}
+          className="dark:bg-white dark:text-white rounded-lg"
+        />
+      </ThemeProvider>
+      <Button type="submit" variant="outlined" className="rounded-lg">
+        {windowWidth <= 900 ? "+" : "Ajoutez une tâche"}
+      </Button>
     </form>
   );
 };

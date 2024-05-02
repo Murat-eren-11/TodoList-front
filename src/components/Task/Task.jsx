@@ -49,18 +49,17 @@ const Task = (props) => {
   };
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-col">
       {sortedTasks.map((task, index) => (
         <div
           className={`${
             index % 2 === 0
-              ? "bg-gray-200 flex flex-row gap-4 dark:text-white"
+              ? "bg-gray-200 flex flex-row gap-4 dark:text-black"
               : "flex flex-row gap-4 dark:text-white"
           }`}
           key={index}
         >
-          <input
-            className="check"
+          <Checkbox
             type="checkbox"
             checked={task.checked}
             onChange={() => handleCheckboxChange(task.text)}

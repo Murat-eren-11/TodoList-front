@@ -55,8 +55,8 @@ const Task = (props) => {
         <div
           className={`${
             index % 2 === 0
-              ? "bg-gray-200 flex flex-row gap-4 rounded-lg dark:text-black"
-              : "flex flex-row gap-4 dark:text-white rounded-lg"
+              ? "bg-gray-200 flex flex-row gap-4 rounded-lg dark:text-black max-w-full"
+              : "flex flex-row gap-4 dark:text-white rounded-lg max-w-full"
           }`}
           key={index}
         >

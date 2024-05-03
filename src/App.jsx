@@ -45,7 +45,7 @@ const App = () => {
     props.onDelete(newTasks);
   };
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex flex-col items-center h-screen justify-around bg-white dark:bg-black text-black dark:text-white">
         <TaskAdd
@@ -71,7 +71,7 @@ const App = () => {
         />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
